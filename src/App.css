@@ -1,11 +1,27 @@
-.App-title {
+.app-title {
 }
-@media screen and (max-width: 500px) {
+
+
+
+@media screen and (max-width: 576px) {
   .output,
   .options,
   .code {
     /* height: 50vh;
     min-height: 20em; */
     height: calc((100vh - 68px) /3);
+  }
+}
+
+@media screen and (min-width: 577px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 5em 1fr 1fr 2em;
+    grid-gap:1em;
+  }
+
+  .app div {
+
   }
 }
