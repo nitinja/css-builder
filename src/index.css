@@ -73,14 +73,15 @@
  */
 
 body {
-  color: #212121;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
     "Segoe UI", "Calibri Light", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.02em;
+  
 }
 
 .font-fira-code {
   font-family: "Fira Code", monospace;
 }
+
+
