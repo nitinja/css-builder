@@ -17,18 +17,12 @@ class App extends Component {
   }
 
   onChangeConfig(newConfig) {
-    this.setState({ appliedCSS: this.getCSSFromConfig(newConfig) });
+    this.setState({ appliedCSS: newConfig });
   }
 
-  getCSSFromConfig(config) {
-    //currently its a identity method
-    return config;
-  }
+
 
   render() {
-    // const block_style = {
-
-    // };
     return (
       <div className="app">
         <header className="app-header p-4 text-center">

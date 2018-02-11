@@ -15,11 +15,11 @@
 
 @media screen and (min-width: 577px) {
   .app {
-    min-height: 800px;
+    min-height: 500x;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 4em 1fr 1fr 2em;
-    grid-gap: 1em;
+    grid-template-rows: 4rem 1fr 1fr 2rem;
+    grid-gap: 1rem;
   }
 
   .app-header {

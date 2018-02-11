@@ -3,19 +3,25 @@ import React, { Component } from "react";
 class DivConfiguration extends Component {
   constructor() {
     super();
+    this.state = {
+      'borderSize': 0
+    }
   }
-  onChangeConfig() {
-    this.props.onChangeConfig({ "border-size": this.refs.borderSize });
+  onChangeConfig(event) {
+    this.setState({ borderSize: event.target.value }, () => {
+      this.props.onChangeConfig({ "border": this.state.borderSize + "px solid red" })
+    });
+
   }
   render() {
     return (
       <div>
-        Config View! {this.refs.borderSize}
+        {/* <span>  Config View! {this.refs.borderSize}</span> */}
         <div>
-          <input
-            type="number"
+          Border Size <input
+            type="range"
             min="0"
-            required
+            value={this.state.borderSize}
             ref="borderSize"
             onChange={this.onChangeConfig.bind(this)}
           />

@@ -6,7 +6,10 @@ class Output extends Component {
   }
 
   render() {
-    return <div>OPP</div>;
+    return <div>
+      {/* props {this.props.appliedCSS['border']} */}
+      <div style={this.props.appliedCSS}>test div</div>
+    </div>;
   }
 }
 
