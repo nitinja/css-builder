@@ -8,7 +8,7 @@ class Output extends Component {
   render() {
     return <div>
       {/* props {this.props.appliedCSS['border']} */}
-      <div style={this.props.appliedCSS}>test div</div>
+      <div style={this.props.appliedConfig}>test div</div>
     </div>;
   }
 }

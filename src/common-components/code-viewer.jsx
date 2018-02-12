@@ -7,7 +7,7 @@ class CodeViewer extends Component {
   }
   render() {
 
-    const appliedCSS = this.getCSSFromConfig(this.props.appliedCSS);
+    const appliedCSS = this.getCSSFromConfig(this.props.appliedConfig);
     // console.log(this.props.appliedCSS);
     return <div>
       <pre>{JSON.stringify(appliedCSS, null, 2)}</pre>
