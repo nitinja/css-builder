@@ -1,15 +1,18 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+import { getStyleList } from './code-viewer';
 
 class Output extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
-    return <div>
-      {/* props {this.props.appliedCSS['border']} */}
-      <div style={this.props.appliedConfig}>test div</div>
-    </div>;
+    const style = getStyleList(this.props.appliedConfig);
+
+    const OutputDiv = styled.div`
+      width:200px;
+      height:200px;
+      ${style}
+     `;
+
+    return <OutputDiv ></OutputDiv>;
   }
 }
 

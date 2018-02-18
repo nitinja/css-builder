@@ -1,18 +1,26 @@
 import React, { Component } from "react";
 
 class CodeViewer extends Component {
-  getCSSFromConfig(config) {
-    //currently it return config as is
-    return config;
-  }
-  render() {
 
-    const appliedCSS = this.getCSSFromConfig(this.props.appliedConfig);
-    // console.log(this.props.appliedCSS);
+  render() {
+    const style = getStyleList(this.props.appliedConfig);
     return <div>
-      <pre>{JSON.stringify(appliedCSS, null, 2)}</pre>
+      {".box {"}
+      {style.map((item, index) => {
+        return <div key={index}>&emsp;{item}</div>
+      })}
+      {"}"}
     </div>;
   }
+}
+
+export function getStyleList(appliedConfig) {
+  const style = [];
+  Object.keys(appliedConfig).forEach(key => {
+    const configObject = appliedConfig[key];
+    style.push(configObject.name + ": " + configObject.getStyle(configObject) + ";");
+  });
+  return style;
 }
 
 export default CodeViewer;

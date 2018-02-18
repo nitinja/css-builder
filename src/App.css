@@ -36,3 +36,7 @@
     grid-column: 1/3;
   } */
 }
+
+.bg-checked {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMElEQVQ4T2O8e/fufwY8QElJCZ80A+OoAcMiDP7//483Hdy7dw9/Ohg1gIFx6IcBAMRTVKEc4ZZPAAAAAElFTkSuQmCC") left center;
+}
