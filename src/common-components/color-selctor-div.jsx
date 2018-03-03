@@ -3,19 +3,17 @@ import styled from "styled-components";
 import { ChromePicker } from 'react-color';
 
 class ColorSelectorDiv extends Component {
-  constructor() {
-    super();
-    this.state = {
+  
+  state = {
       colorPickerOpen: false, //decides if the colorpicker panel is open
       color: {
-        r: '241',
-        g: '112',
-        b: '19',
-        a: '1',
+        r: this.props.value.r,
+        g: this.props.value.g,
+        b: this.props.value.b,
+        a: this.props.value.a
       }
-    }
-  }
-
+   }
+  
   onColorChange(color) {
     this.setState({
       ...this.state,

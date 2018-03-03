@@ -18,39 +18,58 @@ class DivConfiguration extends Component {
       <div>
         {/* <span>  Config View! {this.refs.borderWidth}</span> */}
         <div>
+          Width <input
+            type="number"
+            min="0"
+            value={this.props.appliedConfig.width.value}
+            onChange={event => this.onChangeConfig('width', event.target.value)}
+          />
+        </div>
+        <div>
+          Height <input
+            type="number"
+            min="0"
+            value={this.props.appliedConfig.height.value}
+            onChange={event => this.onChangeConfig('height', event.target.value)}
+          />
+        </div>
+        <div>
           Border Size <input
             type="range"
             min="0"
             value={this.props.appliedConfig.borderWidth.value}
-            ref="borderWidth"
             onChange={event => this.onChangeConfig('borderWidth', event.target.value)}
           />
         </div>
+
         <div>
           Border Radius <input
             type="range"
             min="0"
             value={this.props.appliedConfig.borderRadius.value}
-            ref="borderRadius"
             onChange={event => this.onChangeConfig('borderRadius', event.target.value)}
           />
         </div>
         <div>
           Border Color
-
           <ColorSelectorDiv
             value={this.props.appliedConfig.borderColor.value}
-          />
+            onColorChange={this.onChangeConfig.bind(this, 'borderColor')}>
+          </ColorSelectorDiv>
+          Background Color
+          <ColorSelectorDiv
+            value={this.props.appliedConfig.backgroundColor.value}
+            onColorChange={this.onChangeConfig.bind(this, 'backgroundColor')}>
+          </ColorSelectorDiv>
 
-          <ColorSelectorDiv onColorChange={}></ColorSelectorDiv>
-
-          <input
-            type="text"
-            min="0"
-            value={this.props.appliedConfig.borderColor.value}
-            ref="borderColor"
-            onChange={this.onChangeConfig.bind(this, 'borderColor')}
-          />
+          <div>
+            Border Style
+            <select value={this.props.appliedConfig.borderStyle.value} onChange={event => this.onChangeConfig('borderStyle', event.target.value)}>
+              <option value="solid">Solid</option>
+              <option value="dashed">Dashed</option>
+              <option value="dotted">Dotted</option>
+            </select>
+          </div>          
         </div>
       </div>
     );
